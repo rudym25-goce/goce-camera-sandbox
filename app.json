@@ -1,22 +1,24 @@
 {
   "expo": {
-    "name": "react-native-camera-vision-sandbox",
-    "slug": "react-native-camera-vision-sandbox",
+    "name": "vision-camera-sandbox",
+    "slug": "vision-camera-sandbox",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
-    "scheme": "reactnativecameravisionsandbox",
+    "scheme": "visioncamerasandbox",
     "userInterfaceStyle": "automatic",
-    "newArchEnabled": true,
+    "newArchEnabled": false,
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.rudym25.visioncamerasandbox"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "edgeToEdgeEnabled": true
+      "edgeToEdgeEnabled": true,
+      "package": "com.rudym25.visioncamerasandbox"
     },
     "web": {
       "bundler": "metro",
@@ -33,7 +35,8 @@
           "resizeMode": "contain",
           "backgroundColor": "#ffffff"
         }
-      ]
+      ],
+      "react-native-camera-vision-sandbox"
     ],
     "experiments": {
       "typedRoutes": true
