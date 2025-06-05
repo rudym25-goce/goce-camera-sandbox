@@ -1,4 +1,5 @@
 import { BlurView } from 'expo-blur';
+import * as MediaLibrary from 'expo-media-library';
 import { StatusBar } from 'expo-status-bar';
 import { useEffect, useRef, useState } from 'react';
 import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
@@ -26,8 +27,21 @@ export default function CameraScreen() {
   const checkPermission = async () => {
     console.log('🔑 Requesting camera permission...');
     const cameraPermission = await Camera.requestCameraPermission();
+    await MediaLibrary.requestPermissionsAsync();
     console.log('📝 Camera permission response:', cameraPermission);
     setHasPermission(cameraPermission === 'granted');
+  };
+
+  const savePhotoToLibrary = async (photoPath: string) => {
+    try {
+      const asset = await MediaLibrary.createAssetAsync(photoPath);
+      await MediaLibrary.createAlbumAsync('VisionCamera', asset, false);
+      console.log('✅ Photo saved to library:', asset.uri);
+      return asset.uri;
+    } catch (error) {
+      console.error('❌ Error saving photo to library:', error);
+      throw error;
+    }
   };
 
   const takePhoto = async () => {
@@ -35,20 +49,14 @@ export default function CameraScreen() {
     if (camera.current) {
       try {
         const photo = await camera.current.takePhoto({
-          qualityPrioritization: 'quality',
           flash: 'off',
         });
         console.log('✅ Photo taken successfully:', photo.path);
-        console.log('📷 Photo:', JSON.stringify(photo, (key, value) => {
-          if (Array.isArray(value)) {
-            if (value.length > 100) {
-              return `[${value.slice(0, 100).join(',')}... and ${value.length - 100} more]`;
-            }
-            return `[${value.join(',')}]`;
-          }
-          return value;
-        }, 2));
-        setPhoto(`file://${photo.path}`);
+        
+        // Save to photo library
+        await savePhotoToLibrary(photo.path);
+        // Use the original photo path for preview
+        setPhoto(photo.path);
       } catch (error) {
         console.error('❌ Failed to take photo:', error);
       }
@@ -85,6 +93,7 @@ export default function CameraScreen() {
         device={device}
         isActive={true}
         photo={true}
+        enableDepthData={true}
         onError={(error) => {
           console.error('❌ Camera error:', error);
         }}

@@ -10,7 +10,12 @@
     "newArchEnabled": false,
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.rudym25.visioncamerasandbox"
+      "bundleIdentifier": "com.rudym25.visioncamerasandbox",
+      "infoPlist": {
+        "NSPhotoLibraryUsageDescription": "Allow $(PRODUCT_NAME) to save photos to your photo library",
+        "NSPhotoLibraryAddUsageDescription": "Allow $(PRODUCT_NAME) to save photos to your photo library",
+        "NSDocumentsFolderUsageDescription": "Allow $(PRODUCT_NAME) to save photos to your documents folder"
+      }
     },
     "android": {
       "adaptiveIcon": {
@@ -27,6 +32,12 @@
     },
     "plugins": [
       "expo-router",
+      [
+        "expo-file-system",
+        {
+          "filePermission": "Allow $(PRODUCT_NAME) to access your files."
+        }
+      ],
       [
         "expo-splash-screen",
         {

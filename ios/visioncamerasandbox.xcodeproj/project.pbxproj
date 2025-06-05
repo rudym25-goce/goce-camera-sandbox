@@ -7,27 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B0AE369EA7762E58AB7EA3E /* ExpoModulesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BC7B3BBAC1C9E9235C10E1 /* ExpoModulesProvider.swift */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
-		3AC48EC24EE3FCC436132CFA /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = EFC98E30707CE5AF75C300B8 /* PrivacyInfo.xcprivacy */; };
 		3E461D99554A48A4959DE609 /* SplashScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA286B85B6C04FC6940260E9 /* SplashScreen.storyboard */; };
-		A46E67421585A1C9B35C922B /* ExpoModulesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBAC8C23695989F2589F37C /* ExpoModulesProvider.swift */; };
+		4495A30FC22685FBBA3C614E /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = AD206647BBC4D68BDEFAEA61 /* PrivacyInfo.xcprivacy */; };
 		BB2F792D24A3F905000567C9 /* Expo.plist in Resources */ = {isa = PBXBuildFile; fileRef = BB2F792C24A3F905000567C9 /* Expo.plist */; };
+		C32EBEF674815B895E9B70B1 /* libPods-visioncamerasandbox.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7679E9AB610B37CAE792CADF /* libPods-visioncamerasandbox.a */; };
 		F11748422D0307B40044C1D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11748412D0307B40044C1D9 /* AppDelegate.swift */; };
-		F87230C4D3C3A4A37B79462C /* libPods-visioncamerasandbox.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 538F2F83061B5615CFBEDCFB /* libPods-visioncamerasandbox.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		13B07F961A680F5B00A75B9A /* visioncamerasandbox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = visioncamerasandbox.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = visioncamerasandbox/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = visioncamerasandbox/Info.plist; sourceTree = "<group>"; };
-		4C2D150B770D7CAE4FDE010C /* Pods-visioncamerasandbox.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-visioncamerasandbox.debug.xcconfig"; path = "Target Support Files/Pods-visioncamerasandbox/Pods-visioncamerasandbox.debug.xcconfig"; sourceTree = "<group>"; };
-		538F2F83061B5615CFBEDCFB /* libPods-visioncamerasandbox.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-visioncamerasandbox.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		52BC7B3BBAC1C9E9235C10E1 /* ExpoModulesProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExpoModulesProvider.swift; path = "Pods/Target Support Files/Pods-visioncamerasandbox/ExpoModulesProvider.swift"; sourceTree = "<group>"; };
+		7679E9AB610B37CAE792CADF /* libPods-visioncamerasandbox.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-visioncamerasandbox.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7D6EC8413C4F72B87F51E260 /* Pods-visioncamerasandbox.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-visioncamerasandbox.release.xcconfig"; path = "Target Support Files/Pods-visioncamerasandbox/Pods-visioncamerasandbox.release.xcconfig"; sourceTree = "<group>"; };
 		AA286B85B6C04FC6940260E9 /* SplashScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = SplashScreen.storyboard; path = visioncamerasandbox/SplashScreen.storyboard; sourceTree = "<group>"; };
+		AD206647BBC4D68BDEFAEA61 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xml; name = PrivacyInfo.xcprivacy; path = visioncamerasandbox/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		BB2F792C24A3F905000567C9 /* Expo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Expo.plist; sourceTree = "<group>"; };
-		BCBAC8C23695989F2589F37C /* ExpoModulesProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExpoModulesProvider.swift; path = "Pods/Target Support Files/Pods-visioncamerasandbox/ExpoModulesProvider.swift"; sourceTree = "<group>"; };
-		E7A80427B75255024B597B9A /* Pods-visioncamerasandbox.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-visioncamerasandbox.release.xcconfig"; path = "Target Support Files/Pods-visioncamerasandbox/Pods-visioncamerasandbox.release.xcconfig"; sourceTree = "<group>"; };
+		CE238AAFD1D6A4128562A697 /* Pods-visioncamerasandbox.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-visioncamerasandbox.debug.xcconfig"; path = "Target Support Files/Pods-visioncamerasandbox/Pods-visioncamerasandbox.debug.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
-		EFC98E30707CE5AF75C300B8 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; name = PrivacyInfo.xcprivacy; path = visioncamerasandbox/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		F11748412D0307B40044C1D9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = visioncamerasandbox/AppDelegate.swift; sourceTree = "<group>"; };
 		F11748442D0722820044C1D9 /* visioncamerasandbox-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "visioncamerasandbox-Bridging-Header.h"; path = "visioncamerasandbox/visioncamerasandbox-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -37,7 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F87230C4D3C3A4A37B79462C /* libPods-visioncamerasandbox.a in Frameworks */,
+				C32EBEF674815B895E9B70B1 /* libPods-visioncamerasandbox.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -53,7 +53,7 @@
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				AA286B85B6C04FC6940260E9 /* SplashScreen.storyboard */,
-				EFC98E30707CE5AF75C300B8 /* PrivacyInfo.xcprivacy */,
+				AD206647BBC4D68BDEFAEA61 /* PrivacyInfo.xcprivacy */,
 			);
 			name = visioncamerasandbox;
 			sourceTree = "<group>";
@@ -62,27 +62,17 @@
 			isa = PBXGroup;
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
-				538F2F83061B5615CFBEDCFB /* libPods-visioncamerasandbox.a */,
+				7679E9AB610B37CAE792CADF /* libPods-visioncamerasandbox.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		3BABFDA72B201CEA02F57A98 /* ExpoModulesProviders */ = {
+		49AA5F0004F2D41AC80AB30E /* ExpoModulesProviders */ = {
 			isa = PBXGroup;
 			children = (
-				AC802BE4ABD051EC89F5D952 /* visioncamerasandbox */,
+				C0032111BF1C6E64485B973E /* visioncamerasandbox */,
 			);
 			name = ExpoModulesProviders;
-			sourceTree = "<group>";
-		};
-		59C6D3E67DACB0F47AA191B7 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				4C2D150B770D7CAE4FDE010C /* Pods-visioncamerasandbox.debug.xcconfig */,
-				E7A80427B75255024B597B9A /* Pods-visioncamerasandbox.release.xcconfig */,
-			);
-			name = Pods;
-			path = Pods;
 			sourceTree = "<group>";
 		};
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
@@ -99,8 +89,8 @@
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
-				59C6D3E67DACB0F47AA191B7 /* Pods */,
-				3BABFDA72B201CEA02F57A98 /* ExpoModulesProviders */,
+				D0ADD6DA78A470F63A1A9C3D /* Pods */,
+				49AA5F0004F2D41AC80AB30E /* ExpoModulesProviders */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -115,14 +105,6 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		AC802BE4ABD051EC89F5D952 /* visioncamerasandbox */ = {
-			isa = PBXGroup;
-			children = (
-				BCBAC8C23695989F2589F37C /* ExpoModulesProvider.swift */,
-			);
-			name = visioncamerasandbox;
-			sourceTree = "<group>";
-		};
 		BB2F792B24A3F905000567C9 /* Supporting */ = {
 			isa = PBXGroup;
 			children = (
@@ -130,6 +112,23 @@
 			);
 			name = Supporting;
 			path = visioncamerasandbox/Supporting;
+			sourceTree = "<group>";
+		};
+		C0032111BF1C6E64485B973E /* visioncamerasandbox */ = {
+			isa = PBXGroup;
+			children = (
+				52BC7B3BBAC1C9E9235C10E1 /* ExpoModulesProvider.swift */,
+			);
+			name = visioncamerasandbox;
+			sourceTree = "<group>";
+		};
+		D0ADD6DA78A470F63A1A9C3D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CE238AAFD1D6A4128562A697 /* Pods-visioncamerasandbox.debug.xcconfig */,
+				7D6EC8413C4F72B87F51E260 /* Pods-visioncamerasandbox.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,13 +139,13 @@
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "visioncamerasandbox" */;
 			buildPhases = (
 				08A4A3CD28434E44B6B9DE2E /* [CP] Check Pods Manifest.lock */,
-				271DD2EDF93B6A9B33F7604C /* [Expo] Configure project */,
+				3C4982F0A5A44E7313AA6CCD /* [Expo] Configure project */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
 				800E24972A6A228C8D4807E9 /* [CP] Copy Pods Resources */,
-				88A79EBF7C2C0E838C952D37 /* [CP] Embed Pods Frameworks */,
+				D876CCB91DD05E460E16321C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -166,9 +165,7 @@
 				LastUpgradeCheck = 1130;
 				TargetAttributes = {
 					13B07F861A680F5B00A75B9A = {
-						DevelopmentTeam = Q5HF9R5X33;
 						LastSwiftMigration = 1250;
-						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -198,7 +195,7 @@
 				BB2F792D24A3F905000567C9 /* Expo.plist in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				3E461D99554A48A4959DE609 /* SplashScreen.storyboard in Resources */,
-				3AC48EC24EE3FCC436132CFA /* PrivacyInfo.xcprivacy in Resources */,
+				4495A30FC22685FBBA3C614E /* PrivacyInfo.xcprivacy in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -242,7 +239,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		271DD2EDF93B6A9B33F7604C /* [Expo] Configure project */ = {
+		3C4982F0A5A44E7313AA6CCD /* [Expo] Configure project */ = {
 			isa = PBXShellScriptBuildPhase;
 			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
@@ -271,6 +268,7 @@
 				"${PODS_CONFIGURATION_BUILD_DIR}/EXConstants/EXConstants.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/EXConstants/ExpoConstants_privacy.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/ExpoFileSystem/ExpoFileSystem_privacy.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/ExpoMediaLibrary/ExpoMediaLibrary_privacy.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/ExpoSystemUI/ExpoSystemUI_privacy.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/RCT-Folly/RCT-Folly_privacy.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/React-Core/React-Core_privacy.bundle",
@@ -286,6 +284,7 @@
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/EXConstants.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ExpoConstants_privacy.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ExpoFileSystem_privacy.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ExpoMediaLibrary_privacy.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ExpoSystemUI_privacy.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/RCT-Folly_privacy.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/React-Core_privacy.bundle",
@@ -301,7 +300,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-visioncamerasandbox/Pods-visioncamerasandbox-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		88A79EBF7C2C0E838C952D37 /* [CP] Embed Pods Frameworks */ = {
+		D876CCB91DD05E460E16321C /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -327,7 +326,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F11748422D0307B40044C1D9 /* AppDelegate.swift in Sources */,
-				A46E67421585A1C9B35C922B /* ExpoModulesProvider.swift in Sources */,
+				0B0AE369EA7762E58AB7EA3E /* ExpoModulesProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -336,13 +335,11 @@
 /* Begin XCBuildConfiguration section */
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4C2D150B770D7CAE4FDE010C /* Pods-visioncamerasandbox.debug.xcconfig */;
+			baseConfigurationReference = CE238AAFD1D6A4128562A697 /* Pods-visioncamerasandbox.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = visioncamerasandbox/visioncamerasandbox.entitlements;
-				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = Q5HF9R5X33;
 				ENABLE_BITCODE = NO;
@@ -364,7 +361,7 @@
 				);
 				OTHER_SWIFT_FLAGS = "$(inherited) -D EXPO_CONFIGURATION_DEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rudym25.visioncamerasandbox;
-				PRODUCT_NAME = "visioncamerasandbox";
+				PRODUCT_NAME = visioncamerasandbox;
 				SWIFT_OBJC_BRIDGING_HEADER = "visioncamerasandbox/visioncamerasandbox-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -375,13 +372,11 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E7A80427B75255024B597B9A /* Pods-visioncamerasandbox.release.xcconfig */;
+			baseConfigurationReference = 7D6EC8413C4F72B87F51E260 /* Pods-visioncamerasandbox.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = visioncamerasandbox/visioncamerasandbox.entitlements;
-				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = Q5HF9R5X33;
 				INFOPLIST_FILE = visioncamerasandbox/Info.plist;
@@ -398,7 +393,7 @@
 				);
 				OTHER_SWIFT_FLAGS = "$(inherited) -D EXPO_CONFIGURATION_RELEASE";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rudym25.visioncamerasandbox;
-				PRODUCT_NAME = "visioncamerasandbox";
+				PRODUCT_NAME = visioncamerasandbox;
 				SWIFT_OBJC_BRIDGING_HEADER = "visioncamerasandbox/visioncamerasandbox-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -461,10 +456,7 @@
 				LIBRARY_SEARCH_PATHS = "$(SDKROOT)/usr/lib/swift\"$(inherited)\"";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					" ",
-				);
+				OTHER_LDFLAGS = "$(inherited)  ";
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) DEBUG";
@@ -519,10 +511,7 @@
 				);
 				LIBRARY_SEARCH_PATHS = "$(SDKROOT)/usr/lib/swift\"$(inherited)\"";
 				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					" ",
-				);
+				OTHER_LDFLAGS = "$(inherited)  ";
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 				USE_HERMES = true;
