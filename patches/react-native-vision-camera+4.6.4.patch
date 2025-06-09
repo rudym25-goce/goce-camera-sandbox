@@ -1,0 +1,199 @@
+diff --git a/node_modules/react-native-vision-camera/ios/Core/PhotoCaptureDelegate.swift b/node_modules/react-native-vision-camera/ios/Core/PhotoCaptureDelegate.swift
+index e845b38..83f131c 100644
+--- a/node_modules/react-native-vision-camera/ios/Core/PhotoCaptureDelegate.swift
++++ b/node_modules/react-native-vision-camera/ios/Core/PhotoCaptureDelegate.swift
+@@ -7,6 +7,7 @@
+ //
+ 
+ import AVFoundation
++import CoreMotion
+ 
+ // MARK: - PhotoCaptureDelegate
+ 
+@@ -51,10 +52,52 @@ class PhotoCaptureDelegate: GlobalReferenceHolder, AVCapturePhotoCaptureDelegate
+     }
+ 
+     do {
++      // Get device orientation first
++      let motionManager = CMMotionManager()
++      var deviceOrientation: [String: Double]? = nil
++      
++      print("Is Device Motion Available:", motionManager.isDeviceMotionAvailable)
++      
++      if motionManager.isDeviceMotionAvailable {
++        motionManager.deviceMotionUpdateInterval = 0.1
++        motionManager.startDeviceMotionUpdates()
++        
++        // Add a small delay to allow motion manager to initialize
++        Thread.sleep(forTimeInterval: 0.1)
++        
++        // Try to get motion data
++        if let motion = motionManager.deviceMotion {
++          print("Got motion data!")
++          deviceOrientation = [
++            "pitch": motion.attitude.pitch,
++            "roll": motion.attitude.roll,
++            "yaw": motion.attitude.yaw
++          ]
++          print("Device Orientation: \(deviceOrientation as Any)")
++        } else {
++          print("No motion data available")
++        }
++        
++        motionManager.stopDeviceMotionUpdates()
++      } else {
++        print("Device motion is not available")
++      }
++
+       try FileUtils.writePhotoToFile(photo: photo,
+                                      metadataProvider: metadataProvider,
+                                      file: path)
+ 
++      print("Timestamp: \(photo.timestamp)")
++      print("Is Raw Photo: \(photo.isRawPhoto)")
++      print("Pixel Buffer: \(String(describing: photo.pixelBuffer))")
++      print("Preview Pixel Buffer: \(String(describing: photo.previewPixelBuffer))")
++      print("Embedded Thumbnail Photo Format: \(String(describing: photo.embeddedThumbnailPhotoFormat))")
++      print("Resolved Settings: \(photo.resolvedSettings)")
++      print("Camera Calibration Data: \(String(describing: photo.cameraCalibrationData))")
++      print("Device Orientation is included")
++      print("----------------------------------------")
++      print("📸 Depth Data:", photo.depthData as Any)
++
+       let exif = photo.metadata["{Exif}"] as? [String: Any]
+       let width = exif?["PixelXDimension"]
+       let height = exif?["PixelYDimension"]
+@@ -63,6 +106,53 @@ class PhotoCaptureDelegate: GlobalReferenceHolder, AVCapturePhotoCaptureDelegate
+       let orientation = getOrientation(forExifOrientation: cgOrientation)
+       let isMirrored = getIsMirrored(forExifOrientation: cgOrientation)
+ 
++      guard let depthData = photo.depthData else {
++        promise.resolve([
++          "path": path.absoluteString,
++          "width": width as Any,
++          "height": height as Any,
++          "orientation": orientation,
++          "isMirrored": isMirrored,
++          "isRawPhoto": photo.isRawPhoto,
++          "metadata": photo.metadata,
++          "thumbnail": photo.embeddedThumbnailPhotoFormat as Any,
++          "depthData": nil,
++          "deviceOrientation": deviceOrientation
++        ])
++        return
++      }
++
++      // Convert to 32-bit float if necessary
++      let convertedDepthData = depthData.converting(toDepthDataType: kCVPixelFormatType_DisparityFloat32)
++      let depthPixelBuffer = convertedDepthData.depthDataMap
++
++      CVPixelBufferLockBaseAddress(depthPixelBuffer, .readOnly)
++      defer { CVPixelBufferUnlockBaseAddress(depthPixelBuffer, .readOnly) }
++
++      let depthWidth = CVPixelBufferGetWidth(depthPixelBuffer)
++      let depthHeight = CVPixelBufferGetHeight(depthPixelBuffer)
++      let floatBuffer = unsafeBitCast(CVPixelBufferGetBaseAddress(depthPixelBuffer), to: UnsafeMutablePointer<Float32>.self)
++
++      let count = depthWidth * depthHeight
++      let bufferPointer = UnsafeBufferPointer(start: floatBuffer, count: count)
++      let depthValues = Array(bufferPointer)
++
++      // Optional: calculate min/max depth for metadata
++      let minDepth = depthValues.min() ?? 0.0
++      let maxDepth = depthValues.max() ?? 0.0
++
++      // Compose response
++      let depthDataDict: [String: Any] = [
++        "hasDepthData": true,
++        "width": depthWidth,
++        "height": depthHeight,
++        "minDepth": minDepth,
++        "maxDepth": maxDepth,
++        "values": depthValues, // warning: can be large!
++        "depthMapType": convertedDepthData.depthDataType == kCVPixelFormatType_DisparityFloat32 ? "lidar" : "unknown",
++        "timestamp": Date().timeIntervalSince1970
++      ]
++
+       promise.resolve([
+         "path": path.absoluteString,
+         "width": width as Any,
+@@ -72,6 +162,8 @@ class PhotoCaptureDelegate: GlobalReferenceHolder, AVCapturePhotoCaptureDelegate
+         "isRawPhoto": photo.isRawPhoto,
+         "metadata": photo.metadata,
+         "thumbnail": photo.embeddedThumbnailPhotoFormat as Any,
++        "depthData": depthDataDict,
++        "deviceOrientation": deviceOrientation
+       ])
+     } catch let error as CameraError {
+       promise.reject(error: error)
+diff --git a/node_modules/react-native-vision-camera/src/types/PhotoFile.ts b/node_modules/react-native-vision-camera/src/types/PhotoFile.ts
+index 85098d6..04718ca 100644
+--- a/node_modules/react-native-vision-camera/src/types/PhotoFile.ts
++++ b/node_modules/react-native-vision-camera/src/types/PhotoFile.ts
+@@ -151,4 +151,66 @@ export interface PhotoFile extends TemporaryFile {
+       MeteringMode: number
+     }
+   }
++  /**
++   * Device orientation at the time of capture (iOS only)
++   *
++   * @platform iOS
++   */
++  deviceOrientation?: {
++    /**
++     * Pitch angle in radians
++     */
++    pitch: number
++    /**
++     * Roll angle in radians
++     */
++    roll: number
++    /**
++     * Yaw angle in radians
++     */
++    yaw: number
++  }
++  /**
++   * Depth data from LiDAR or stereo cameras (iOS only)
++   *
++   * @platform iOS
++   */
++  depthData?: {
++    /**
++     * Whether this photo contains depth data
++     */
++    hasDepthData: boolean
++    /**
++     * The width of the depth map
++     */
++    width: number
++    /**
++     * The height of the depth map
++     */
++    height: number
++    /**
++     * The minimum depth value
++     */
++    minDepth: number
++    /**
++     * The maximum depth value
++     */
++    maxDepth: number
++    /**
++     * The depth map values
++     */
++    values?: number[]
++    /**
++     * The type of depth data (LiDAR or stereo)
++     */
++    depthMapType?: 'lidar' | 'stereo'
++    /**
++     * Raw depth data fields
++     */
++    rawDepthData?: Record<string, unknown>
++    /**
++     * Timestamp of when the depth data was captured
++     */
++    timestamp?: number
++  }
+ }

@@ -47,7 +47,17 @@
           "backgroundColor": "#ffffff"
         }
       ],
-      "react-native-camera-vision-sandbox"
+      [
+        "expo-build-properties",
+        {
+          "android": {
+            "minSdkVersion": 24
+          },
+          "ios": {
+            "deploymentTarget": "15.5"
+          }
+        }
+      ]
     ],
     "experiments": {
       "typedRoutes": true
