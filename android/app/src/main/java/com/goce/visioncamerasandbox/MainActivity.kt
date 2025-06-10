@@ -1,4 +1,4 @@
-package com.rudym25.visioncamerasandbox
+package com.goce.visioncamerasandbox
 import expo.modules.splashscreen.SplashScreenManager
 
 import android.os.Build

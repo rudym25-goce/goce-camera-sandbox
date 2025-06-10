@@ -28,7 +28,7 @@
         <key>CFBundleURLSchemes</key>
         <array>
           <string>visioncamerasandbox</string>
-          <string>com.rudym25.visioncamerasandbox</string>
+          <string>com.goce.visioncamerasandbox</string>
         </array>
       </dict>
       <dict>

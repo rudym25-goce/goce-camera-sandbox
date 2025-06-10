@@ -10,7 +10,7 @@
     "newArchEnabled": false,
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.rudym25.visioncamerasandbox",
+      "bundleIdentifier": "com.goce.visioncamerasandbox",
       "infoPlist": {
         "NSPhotoLibraryUsageDescription": "Allow $(PRODUCT_NAME) to save photos to your photo library",
         "NSPhotoLibraryAddUsageDescription": "Allow $(PRODUCT_NAME) to save photos to your photo library",
@@ -23,7 +23,7 @@
         "backgroundColor": "#ffffff"
       },
       "edgeToEdgeEnabled": true,
-      "package": "com.rudym25.visioncamerasandbox"
+      "package": "com.goce.visioncamerasandbox"
     },
     "web": {
       "bundler": "metro",

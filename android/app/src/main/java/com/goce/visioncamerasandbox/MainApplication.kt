@@ -1,4 +1,4 @@
-package com.rudym25.visioncamerasandbox
+package com.goce.visioncamerasandbox
 
 import android.app.Application
 import android.content.res.Configuration

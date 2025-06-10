@@ -87,9 +87,9 @@ android {
     buildToolsVersion rootProject.ext.buildToolsVersion
     compileSdk rootProject.ext.compileSdkVersion
 
-    namespace 'com.rudym25.visioncamerasandbox'
+    namespace 'com.goce.visioncamerasandbox'
     defaultConfig {
-        applicationId 'com.rudym25.visioncamerasandbox'
+        applicationId 'com.goce.visioncamerasandbox'
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
